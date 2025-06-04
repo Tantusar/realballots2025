@@ -247,6 +247,16 @@ select:disabled, select:empty {
     border-bottom: none;
 }
 
-option[hidden] {
+button {
+    font-family: inherit;
+    font-size: inherit;
+    display: inline-block;
+    background: none;
+    border-radius: 0;
+    border: 1px black solid;
+}
+
+button:disabled {
     color: grey;
+    border-color: grey;
 }
