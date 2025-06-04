@@ -1,0 +1,252 @@
+html {
+    font-size: 10pt;
+    
+}
+
+body {
+    font-family: Inter;
+    display: grid;
+    grid-template-columns: 6cm repeat(auto-fill, 4.6cm);
+    grid-template-rows: min-content min-content 7mm min-content;
+    font-size: 1rem;
+    margin: 0;
+    height: min-content;
+    width: min-content;
+    font-feature-settings: "ss07";
+}
+
+img {
+    width: 1cm;
+    height: 1cm;
+    display: block;
+
+    &:not([src]) {
+        opacity: 0;
+    }
+}
+
+.box {
+    width: 1cm;
+    height: 1cm;
+    box-sizing: border-box;
+    border: 1.5pt solid black;
+    grid-area: box;
+
+    margin-right: 2mm;
+
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 6mm;
+    font-weight: bold;
+}
+
+hgroup {
+    grid-column: 1 / -1;
+
+    height: fit-content;
+
+    width: 100%;
+
+    margin: 1cm 1cm 3mm 1cm;
+
+    h1 {
+        font-size: 1.5rem;
+        margin: 0;
+        font-weight: 300;
+        grid-area: h1;
+        width: max-content;
+
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin: 0;
+        font-weight: 400;
+        grid-area: h2;
+        width: max-content;
+    }
+
+}
+
+nav {
+    grid-row: 2 / -1;
+
+    display: grid;
+
+    grid-template-rows: subgrid;
+
+    margin-left: 1cm;
+
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        padding: 2mm 2mm 1mm 0;
+
+        grid-row: 1;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        padding: 1mm 2mm 2mm 0;
+
+        grid-row: 3;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+        margin: 0;
+        line-height: 1;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    aside {
+        font-size: 1.5rem;
+        background: black;
+        color: white;
+        font-weight: 500;
+        padding: 0 1.5mm;
+        height: 8mm;
+        line-height: 8mm;
+        margin-block: 1mm;
+
+        clip-path: polygon(0% 0%, calc(100% - 4mm) 0%, 100% 50%, calc(100% - 4mm) 100%, 0% 100%)
+    }
+}
+
+main {
+    display: grid;
+
+    grid-row: 2 / -1;
+    grid-column: 2 / -1;
+    
+    grid-template-rows: subgrid;
+
+    grid-template-columns: repeat(auto-fill, 4.6cm);
+
+    padding-bottom: 1cm;
+
+}
+
+section {
+    grid-row: 1 / -1;
+
+    display: grid;
+
+    grid-template-rows: subgrid;
+
+    width: 4.6cm;
+
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        label {
+            font-size: 0.9rem;
+            justify-self: start;
+            margin-bottom: auto;
+            line-height: 1;
+        }
+        gap: 2mm;
+    }
+
+    header,
+    footer {
+        padding: 0 2mm 1mm;
+        border-left: 1pt solid black;
+
+        :not(label) {
+            font-family: 'Roboto Condensed'
+        }
+
+        h4 {
+            font-size: 1.05rem;
+            line-height: 1;
+            height: 4lh;
+            text-transform: uppercase;
+            margin: 0;
+        }
+    }
+
+    footer {
+        padding-top: 1mm;
+    }
+
+    footer h4 {
+        margin-bottom: 2mm;
+    }
+
+    &:last-child {
+        padding-right: 1cm;
+    }
+}
+
+.divider {
+    grid-row: 2;
+
+    background: black;
+    height: 3mm;
+    margin: 2mm 0;
+}
+
+article {
+    display: grid;
+    grid-template-areas:
+        'box surname'
+        'box givenName'
+        'box party';
+
+    grid-template-columns: 12mm auto;
+    align-items: start;
+
+    font-size: 0.9rem;
+
+    line-height: 1;
+
+    margin-bottom: 2mm;
+
+    .surname {
+        grid-area: surname;
+        font-weight: bold;
+        margin-top: -0.3mm
+    }
+
+    .party {
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        margin-top: 0.5mm;
+        letter-spacing: -0.4pt;
+        font-weight: 600;
+        min-height: 1rem;
+    }
+}
+
+.party, h4 {
+    text-wrap: balance;
+}
+
+select {
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    border-bottom: 1px black dotted;
+    display: inline-block;
+    width: min-content;
+    background: none;
+}
+
+select:disabled, select:empty {
+    border-bottom: none;
+}
+
+option[hidden] {
+    color: grey;
+}
