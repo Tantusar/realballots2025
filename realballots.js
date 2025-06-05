@@ -256,7 +256,7 @@ function random_paper() {
     let selecteddiv = "";
 
     for (const div of divs) {
-        if (nextlevel <= sizes[div]) {
+        if (nextlevel < sizes[div]) {
             selecteddiv = div;
             break;
         }
@@ -281,7 +281,7 @@ function random_paper() {
     let selectedbooth = "";
 
     for (const booth of booths) {
-        if (nextlevel <= sizes[booth]) {
+        if (nextlevel < sizes[booth]) {
             selectedbooth = booth;
             break;
         }
@@ -304,7 +304,7 @@ function random_paper() {
     let selectedbatch = "";
 
     for (const batch of batches) {
-        if (nextlevel <= sizes[batch]) {
+        if (nextlevel < sizes[batch]) {
             selectedbatch = batch;
             break;
         }
