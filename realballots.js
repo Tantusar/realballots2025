@@ -1,9 +1,9 @@
 var index = []
-var divsel, boothsel, batchsel, papersel, random
+var divsel, boothsel, batchsel, papersel, randombut
 
 var queryParams = new URLSearchParams(window.location.search);
 
-async function load_divisions(andthen = "") {
+function load_divisions(andthen = "") {
     divsel.innerHTML = "";
 
     const divload = document.createElement("option");
@@ -231,7 +231,7 @@ function* degauss(n) {
 }
 
 function random_paper() {
-    random.setAttribute("disabled", "");
+    randombut.disabled = true;
 
     const divs = Object.keys(index[1]);
     let sizes = {};
@@ -329,7 +329,7 @@ function random_paper() {
 
     load_divisions(selecteddiv);
 
-    random.removeAttribute("disabled");
+    randombut.disabled = false;
 }
 
 async function load_index() {
@@ -346,7 +346,7 @@ window.addEventListener("load", (event) => {
     boothsel = document.getElementById("booth")
     batchsel = document.getElementById("batch")
     papersel = document.getElementById("paper")
-    random = document.getElementById("random")
+    randombut = document.getElementById("random")
 
     load_index().then((v) => {
         load_divisions(queryParams.get("division"));
@@ -355,6 +355,6 @@ window.addEventListener("load", (event) => {
         boothsel.onchange = load_batches;
         batchsel.onchange = load_papers;
         papersel.onchange = load_paper;
-        random.onclick = random_paper;
+        randombut.onclick = random_paper;
     })
 })

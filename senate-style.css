@@ -256,7 +256,6 @@ button {
     border: 1px black solid;
 }
 
-button:disabled {
-    color: grey;
-    border-color: grey;
+button:disabled, button[disabled] {
+    opacity: 0.5;
 }
