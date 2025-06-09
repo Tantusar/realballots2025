@@ -14,10 +14,8 @@ body {
     grid-template-rows: min-content min-content 7mm min-content;
     font-size: 1rem;
     margin: 0;
-    min-height: 100dvh;
     height: min-content;
-    width: 100%;
-    overflow-x: auto;
+    width: min-content;
     font-feature-settings: "ss07";
     box-sizing: border-box;
 }
